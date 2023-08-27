@@ -18,7 +18,5 @@ $(document).ready(function () {
 
     // Set up the view js, this also sets up key listeners
     const layerView = new document.LayerView(socket, bgLayer, objLayer, grLayer);
-
     socket.emit("join", {"room_id": room_id});
-
 }); // on document ready end

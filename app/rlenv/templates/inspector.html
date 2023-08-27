@@ -18,28 +18,27 @@
 </head>
 
 <body>
-    <!-- The "viewport" id and three stacked canvases of the same size are needed to
-        properly render using the LayerView class -->
-    <div id="viewport" style="height: 600px; width: 600px; padding: 10px;">
-        <canvas id="background" width="600" height="600"></canvas>
-        <canvas id="objects" width="600" height="600"></canvas>
-        <canvas id="gripper" width="600" height="600"></canvas>
+    <div class="ui segment" style="margin: 10px; display: flex">
+        <div class="viewport" style="height: 600px; width: 600px; margin: auto;">
+            <canvas id="background" width="600px" height="600px"></canvas>
+            <canvas id="objects" width="600px" height="600px"></canvas>
+            <canvas id="gripper" width="600px" height="600px"></canvas>
+        </div>
     </div>
+
 
     <script>
         var room_id = "{{ room_id }}"
         console.log(room_id)
     </script>
 
-    <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- socketio -->
-    <script src="https://cdn.socket.io/4.1.2/socket.io.min.js" integrity="sha384-toS6mmwu70G0fw54EGlWWeA4z3dyJ+dlXBtSURSKN4vyRFOcxd3Bzjj/AoOwY+Rg" crossorigin="anonymous"></script>
-    <!-- General GOLMI functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
+    <script type="text/javascript" src="//cdn.socket.io/4.4.1/socket.io.min.js"></script>
+
     <script src="{{ url_for('RLenv.static', filename='js/View.js') }}"></script>
     <script src="{{ url_for('RLenv.static', filename='js/LayerView.js') }}"></script>
-    <!-- Interface specific functionality -->
-
     <script src="{{ url_for('RLenv.static', filename='js/inspector.js') }}"></script>
 </body>
 

@@ -10,7 +10,7 @@
     position: relative;
 }
 
-#viewport canvas {
+.viewport canvas {
     /**
      * Position absolute provides canvases to be able
      * to be layered on top of each other

@@ -220,6 +220,22 @@ $(document).ready(function () {
             ctx.fill(); // add color
         }
 
+        
+        _drawBB(ctx, bMatrix, params, color) {
+            let x = params.x * this.grid_factor
+            let y = params.y * this.grid_factor
+            // Draw blocks       
+            for (let i=0; i< bMatrix[0].length * this.grid_factor; i++) {
+                this._drawUpperBorder(ctx, x+i, y, color);
+                this._drawLowerBorder(ctx, x+i, (y + bMatrix.length * this.grid_factor -1), color);
+            }
+
+            for (let i=0; i< bMatrix.length * this.grid_factor; i++) {
+                this._drawLeftBorder(ctx, x, y + i, color);
+                this._drawRightBorder(ctx, x + bMatrix[0].length * this.grid_factor -1, y + i, color);
+            }
+        }
+
         _drawUpperBorder(
             ctx, x, y, highlight=false, borderColor="black", borderWidth=2) {
             this._drawBorder(ctx, x, y, x+1, y, highlight);
