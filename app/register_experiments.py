@@ -1,7 +1,7 @@
 from app import REGISTRY, Experiment
 from app.welcome import welcome
 from app.pentomino import pentomino
-
+from app.rlenv import rlenv
 
 def register_app(app):
     # The welcome page (will automatically list
@@ -14,6 +14,14 @@ def register_app(app):
             "/pentomino/",
             pentomino.pentomino_bp,
             pentomino.apply_config_to
+        )
+    )
+    REGISTRY.append(
+        Experiment(
+            "RLenv",
+            "/rlenv/",
+            rlenv.rlenv,
+            rlenv.apply_config_to
         )
     )
     # Your custom experiments come here (uncomment and adjust the next line)
